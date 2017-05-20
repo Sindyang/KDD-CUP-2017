@@ -11,7 +11,7 @@ from datetime import *
 file_suffix = '.csv'
 
 def get_result(in_file2):
-	in_file2_name = 'E:/KDD_CUP/dataSets/testing_phase1/' + in_file2 + file_suffix
+	in_file2_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/' + in_file2 + file_suffix
 
 	fr = open(in_file2_name,'r')
 	result = fr.readlines()
@@ -19,14 +19,14 @@ def get_result(in_file2):
 	return result
 
 def get_final_result(in_file1,result):
-	in_file1_name = 'E:/KDD_CUP/dataSets/testing_phase1/' + in_file1 + file_suffix
+	in_file1_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/' + in_file1 + file_suffix
 	fr = open(in_file1_name,'r')
 	fr.readline()
 	infor = fr.readlines()
 	fr.close()
 
 	out_file = 'final_result'
-	out_file_name = 'E:/KDD_CUP/dataSets/testing_phase1/' + out_file + file_suffix
+	out_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/' + out_file + file_suffix
 
 	fw = open(out_file_name,'w')
 	fw.writelines(','.join(['intersection_id','tollgate_id','time_window','avg_travel_time'])+'\n')

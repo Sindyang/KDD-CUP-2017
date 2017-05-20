@@ -14,8 +14,8 @@ file_suffix = '.csv'
 def format(in_file):
 	#step 1: read data
 	out_file = 'testing_phase1_final_format'
-	in_file_name = 'E:/KDD_CUP/dataSets/testing_phase1/'+in_file+file_suffix
-	out_file_name = 'E:/KDD_CUP/dataSets/testing_phase1/' + out_file +file_suffix
+	in_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/'+in_file+file_suffix
+	out_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/' + out_file +file_suffix
 	fr = open(in_file_name,'r')
 	fr.readline()
 	data = fr.readlines()

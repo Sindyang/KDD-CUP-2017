@@ -14,7 +14,7 @@ from datetime import *
 file_suffix = '.csv'
 
 def set_Weather_Information(in_file_weather):
-	in_file_name = 'E:/KDD_CUP/dataSets/testing_phase1/'+ in_file_weather + file_suffix
+	in_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/'+ in_file_weather + file_suffix
 	#step 1:读入天气信息
 	fr = open(in_file_name,'r')
 	fr.readline()
@@ -44,9 +44,9 @@ def set_Weather_Information(in_file_weather):
 
 def add_Weather_Information(in_file_travel_time, weather_information):
 
-	in_file_name = 'E:/KDD_CUP/dataSets/testing_phase1/'+ in_file_travel_time + file_suffix
+	in_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/'+ in_file_travel_time + file_suffix
 	out_file = 'testing20min_avg_travel_time_weather'
-	out_file_name = 'E:/KDD_CUP/dataSets/testing_phase1/' + out_file + file_suffix
+	out_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/' + out_file + file_suffix
 	#step 1: 读入时间信息
 	fr = open(in_file_name, 'r')
 	fr.readline()
