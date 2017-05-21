@@ -14,7 +14,7 @@ from datetime import *
 file_suffix = '.csv'
 
 def set_Weather_Information(in_file_weather):
-	in_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/'+ in_file_weather + file_suffix
+	in_file_name = 'E:/KDD-CUP-2017/dataSets/submit/'+ in_file_weather + file_suffix
 	#step 1:读入天气信息
 	fr = open(in_file_name,'r')
 	fr.readline()
@@ -44,9 +44,9 @@ def set_Weather_Information(in_file_weather):
 
 def add_Weather_Information(in_file_travel_time, weather_information):
 
-	in_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/'+ in_file_travel_time + file_suffix
-	out_file = 'testing20min_avg_travel_time_weather'
-	out_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/' + out_file + file_suffix
+	in_file_name = 'E:/KDD-CUP-2017/dataSets/submit/'+ in_file_travel_time + file_suffix
+	out_file = 'submit_20min_avg_travel_time_weather'
+	out_file_name = 'E:/KDD-CUP-2017/dataSets/submit/' + out_file + file_suffix
 	#step 1: 读入时间信息
 	fr = open(in_file_name, 'r')
 	fr.readline()
@@ -55,7 +55,7 @@ def add_Weather_Information(in_file_travel_time, weather_information):
 
 	#step 2:add weather information and print
 	fw = open(out_file_name,'w')
-	fw.writelines(','.join(['intersection_id','tollgate_id','time_window','pressure','sea_pressure','wind_direction','wind_speed','temperature','rel_humidity','precipitation','avg_travel_time'])+'\n')
+	fw.writelines(','.join(['intersection_id','tollgate_id','week','time_window','pressure','sea_pressure','wind_direction','wind_speed','temperature','rel_humidity','precipitation','avg_travel_time'])+'\n')
 	for i in range(len(traj_data)):
 		each_infor = traj_data[i].replace('"','').strip().split(',')
 		intersection_id = each_infor[0]
@@ -64,9 +64,11 @@ def add_Weather_Information(in_file_travel_time, weather_information):
 		end_time_window = each_infor[3]
 		start_time_window = datetime.strptime(start_time_window,'%Y-%m-%d %H:%M:%S')
 		today = date(start_time_window.year, start_time_window.month, start_time_window.day)
+		week = today.weekday()
 		hour = start_time_window.hour
 		hour = int(math.floor(hour / 3) * 3)
 
+		#得到天气信息
 		if str(today) in weather_information.keys():
 			hours = weather_information[str(today)].keys()
 			if str(hour) in hours:
@@ -80,14 +82,14 @@ def add_Weather_Information(in_file_travel_time, weather_information):
 		        precipitation = wea_list[6]
 
 		avg_travel_time = each_infor[-1]
-		out_line = ','.join(['"' + intersection_id + '"','"'+tollgate_id+'"','"'+str(start_time_window)+','+str(end_time_window)+'"','"'+pressure+'"','"'+sea_pressure+'"','"'+wind_direction+'"','"'+wind_speed+'"','"'+temperature+'"','"'+rel_humidity+'"','"'+str(precipitation)+'"','"'+str(avg_travel_time)+'"'])+'\n'
+		out_line = ','.join(['"' + intersection_id + '"','"'+tollgate_id+'"','"'+str(week)+'"','"'+str(start_time_window)+','+str(end_time_window)+'"','"'+pressure+'"','"'+sea_pressure+'"','"'+wind_direction+'"','"'+wind_speed+'"','"'+temperature+'"','"'+rel_humidity+'"','"'+str(precipitation)+'"','"'+str(avg_travel_time)+'"'])+'\n'
 		fw.writelines(out_line)
 	fw.close()
 
 
 def main():
     in_file_weather = 'weather (table 7)_test1'
-    in_file_travel_time = 'test1_20min_avg_travel_time'
+    in_file_travel_time = 'submit_20min_avg_travel_time'
     weather_information = set_Weather_Information(in_file_weather)
     add_Weather_Information(in_file_travel_time, weather_information)
 

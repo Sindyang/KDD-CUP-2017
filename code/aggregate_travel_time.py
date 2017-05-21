@@ -33,6 +33,7 @@ def avgTravelTime(in_file):
         tollgate_id = each_traj[1]
 
         route_id = intersection_id + '-' + tollgate_id
+
         if route_id not in travel_times.keys():
             travel_times[route_id] = {}
 
