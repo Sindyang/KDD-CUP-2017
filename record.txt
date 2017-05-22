@@ -1,9 +1,14 @@
 2017-5-20
 param = {'max_depth':3, 'min_child_weight':4,'eta':0.02,'gamma':0, 'silent':1, 'objective':'reg:linear', 'colsample_bytree':0.8} 
-intersection_id,tollgate_id,week,time_window,pressure,sea_pressure,wind_direction,wind_speed,temperature,rel_humidity,precipitation
-mape:0.1973
+intersection_id,tollgate_id,week,start_time,end_time,pressure,sea_pressure,wind_direction,wind_speed,temperature,rel_humidity,precipitation
+mape = 0.1973
 
 2017-5-21
 param = {'max_depth':5, 'min_child_weight':4,'eta':0.02,'gamma':0, 'silent':1, 'objective':'reg:linear', 'colsample_bytree':0.8}
-intersection_id,tollgate_id,week,time_window,wind_direction,wind_speed,temperature,rel_humidity,precipitation
-mape:0.1836
+intersection_id,tollgate_id,week,start_time,end_time,wind_direction,wind_speed,temperature,rel_humidity,precipitation
+mape = 0.1836
+
+2017-5-22
+param = {'max_depth':6, 'min_child_weight':5,'eta':0.02,'gamma':0, 'silent':1, 'objective':'reg:linear', 'colsample_bytree':0.8}
+intersection_id,tollgate_id,week,start_time,end_time,rel_humidity,precipitation
+mape = 
