@@ -3,6 +3,8 @@
 
 """
 Objective:Format
+Parameter:intersection_id,tollgate_id,week,start_time,end_time,wind_direction,wind_speed,temperature,rel_humidity,precipitation
+
 
 """
 

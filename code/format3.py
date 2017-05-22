@@ -3,8 +3,7 @@
 
 """
 Objective:Format
-Parameter:intersection_id,tollgate_id,week,start_time,end_time,pressure,sea_pressure,wind_direction,wind_speed,temperature,rel_humidity,precipitation,avg_travel_time
-
+Parameter:intersection_id,tollgate_id,week,start_time,end_time,rel_humidity,precipitation
 
 """
 
@@ -45,8 +44,8 @@ def format(in_file):
 		end_time_window = datetime.strptime(end_time_window, "%Y-%m-%d %H:%M:%S")
 		end_time = 60 * end_time_window.hour + end_time_window.minute
 
-		outline = avg_travel_time +' '+' '.join(['0:'+intersection_id,'1:'+each_data[1],'2:'+each_data[2],'3:'+str(start_time),'4:'+str(end_time),'5:'+each_data[5],
-			'6:'+each_data[6],'7:'+each_data[7],'8:'+each_data[8],'9:'+each_data[9],'10:'+each_data[10],'11:'+each_data[11]])+'\n'
+		outline = avg_travel_time +' '+' '.join(['0:'+intersection_id,'1:'+each_data[1],'2:'+each_data[2],'3:'+str(start_time),'4:'+str(end_time),
+			'5:'+each_data[-3],'6:'+each_data[-2]])+'\n'
 		fw.writelines(outline)
 	fw.close()
 
