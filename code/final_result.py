@@ -25,7 +25,7 @@ def get_final_result(in_file1,result):
 	infor = fr.readlines()
 	fr.close()
 
-	out_file = 'final_result_20170522'
+	out_file = 'final_result_20170523'
 	out_file_name = 'E:/KDD-CUP-2017/dataSets/submit/' + out_file + file_suffix
 
 	fw = open(out_file_name,'w')

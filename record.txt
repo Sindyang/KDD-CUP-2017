@@ -11,4 +11,9 @@ mape = 0.1836
 2017-5-22
 param = {'max_depth':6, 'min_child_weight':5,'eta':0.02,'gamma':0, 'silent':1, 'objective':'reg:linear', 'colsample_bytree':0.8}
 intersection_id,tollgate_id,week,start_time,end_time,rel_humidity,precipitation
-mape = 
+mape = 0.1876
+
+2017-5-23
+param = {'max_depth':6, 'min_child_weight':4,'eta':0.021,'gamma':0, 'silent':1, 'objective':'reg:linear', 'colsample_bytree':0.8}
+intersection_id,tollgate_id,week,start_time,wind_direction,wind_speed,temperature,rel_humidity,precipitation
+mape = 0.1853
