@@ -16,8 +16,8 @@ file_suffix = '.csv'
 def avgTravelTime(in_file):
 
     out_suffix = '_20min_avg_travel_time'
-    in_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/'+ in_file + file_suffix
-    out_file_name = 'E:/KDD-CUP-2017/dataSets/testing_phase1/' + in_file.split('_')[1] + out_suffix + file_suffix
+    in_file_name = 'E:/KDD-CUP-2017/dataSet_phase2/'+ in_file + file_suffix
+    out_file_name = 'E:/KDD-CUP-2017/dataSet_phase2/' + "test2" + out_suffix + file_suffix
 
     # Step 1: Load trajectories
     fr = open(in_file_name, 'r')
@@ -67,7 +67,7 @@ def avgTravelTime(in_file):
 
 def main():
 
-    in_file = 'trajectories(table 5)_test1'
+    in_file = 'trajectories(table 5)_test2'
     avgTravelTime(in_file)
 
 if __name__ == '__main__':
