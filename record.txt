@@ -37,4 +37,4 @@ param = {'max_depth':6, 'min_child_weight':5,'eta':0.021,'gamma':0, 'silent':1, 
 intersection_id,tollgate_id,week,start_time,end_time,wind_direction,wind_speed,temperature,rel_humidity,precipitation
 num_round = 103
 test_mape = 0.186573
-mape = 
+mape = 0.2060
